@@ -1,28 +1,61 @@
 ---
+import '../styles/global.css'
 import Navbar from '../components/Navbar.astro'
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro'
 
 const services = [
   {
-    service: "Accounting Services",
-    icon: "Icon",
-    subServices: ["Bookkeeping and financial statement preparation", "Payroll processing and compliance", "Management accounting"]
-  },
-    {
     service: "Tax Services",
-    icon: "Icon",
-    subServices: ["Personal and corporate tax returns", "VAT and PAYE submissions", "Tax planning and advice"]
+    icon: ""
   },
-    {
+  {
+      
     service: "Business Advisory",
-    icon: "Icon",
-    subServices: ["Business registration and compliance", "Financial forecasting and budgeting", "Strategic financial advice"]
+    icon: ""
+  
+  },
+   {
+      
+    service: "Monthly Bookkeeping",
+    icon: ""
+  
+  },
+   {
+      
+    service: "Payroll Services",
+    icon: ""
+  
   },
     {
-    service: "Other Services",
-    icon: "Icon",
-    subServices: ["SARS dispute resolution", "Auditing support", "Trust accounting"]
+      
+    service: "Business Registrations",
+    icon: ""
+  
+  },
+    {
+      
+    service: "Management Reports",
+    icon: ""
+  
+  },
+    {
+      
+    service: "Financial Statements",
+    icon: ""
+  
+  },
+    {
+      
+    service: "Maintenance of Ledgers & Records",
+    icon: ""
+  
+  },
+    {
+      
+    service: "Budgeting & Performance Reviews",
+    icon: ""
+  
   }
 ]
 ---
@@ -34,8 +67,8 @@ const services = [
   <!-- Grid -->
   <div class="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
     <div class="lg:col-span-3">
-      <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl">We obsess over numbers, so you don't have to</h1>
-      <p class="mt-3 text-lg text-gray-800">AGA (SA) led tax, accounting and payroll experts for growing and established South African businesses.</p>
+      <h1 class="block text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl">We obsess over numbers, so you don't have to</h1>
+      <p class="mt-3 text-lg text-foreground">AGA (SA) led tax, accounting and payroll experts for growing and established South African businesses.</p>
 
       <div class="mt-5 lg:mt-8 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
    
@@ -68,59 +101,22 @@ const services = [
 
       <p class="mb-8 lg:mb-16 font-light text-center text-gray-500  sm:text-xl">Our Services</p>
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6">
-    <!-- Card -->
-    <a class="group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5" href="#">
-      <svg class="shrink-0 size-8 text-gray-800 mt-0.5 me-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+
+    {services.map((s , i)=> (
+    
+    <a class="group flex gap-y-6 size-full hover:bg-secondary focus:outline-none focus:bg-secondary rounded-lg p-5" href="#">
+      <svg class="shrink-0 size-8 text-primary mt-0.5 me-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
 
       <div>
         <div>
-          <h3 class="block font-bold text-gray-800">Accounting</h3>
-          <p class="text-gray-600">The simplest way to keep your portfolio always up-to-date.</p>
+          <h3 class="block font-bold text-gray-800">{s.service}</h3>
+          <p class="text-foreground">The simplest way to keep your portfolio always up-to-date.</p>
         </div>
-
-        <p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800">
-          Learn more
-          <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </p>
       </div>
     </a>
-    <!-- End Card -->
+    
+      ))}
 
-    <!-- Card -->
-    <a class="group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5" href="#">
-      <svg class="shrink-0 size-8 text-gray-800 mt-0.5 me-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
-
-      <div>
-        <div>
-          <h3 class="block font-bold text-gray-800">Taxation</h3>
-          <p class="text-gray-600">New design projects delivered to your inbox each morning.</p>
-        </div>
-
-        <p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800">
-          Learn more
-          <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </p>
-      </div>
-    </a>
-    <!-- End Card -->
-
-    <!-- Card -->
-    <a class="group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5" href="#">
-      <svg class="shrink-0 size-8 text-gray-800 mt-0.5 me-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"/></svg>
-
-      <div>
-        <div>
-          <h3 class="block font-bold text-gray-800">Payroll</h3>
-          <p class="text-gray-600">Get your goods in front of millions of potential customers with ease.</p>
-        </div>
-
-        <p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800">
-          Learn more
-          <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </p>
-      </div>
-    </a>
-    <!-- End Card -->
   </div>
 </div>
 <!-- End services -->
@@ -223,7 +219,7 @@ const services = [
 <!-- End Why choose us -->
 
 <!-- Contact -->
-<section class="mb-16">
+<div class="mb-16 ">
   <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
     <div class="mb-4 mx-auto text-center w-full">
 <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-lg text-xs font-medium bg-orange-100 text-orange-800">
@@ -232,24 +228,24 @@ const services = [
 </span>
 </div>
 
-      <p class="mb-8 lg:mb-16 font-light text-center text-gray-500  sm:text-xl">Get in touch with us</p>
+      <p class="mb-8 lg:mb-16 font-light text-center text-foreground  sm:text-xl">Get in touch with us</p>
       <form action="#" class="space-y-8">
           <div>
               <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>
-              <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="name@flowbite.com" required>
+              <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="name@flowbite.com" required>
           </div>
           <div>
               <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 ">Subject</label>
-              <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Let us know how we can help you" required>
+              <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary focus:border-primary" placeholder="Let us know how we can help you" required>
           </div>
           <div class="sm:col-span-2">
               <label for="message" class="block mb-2 text-sm font-medium text-gray-900 ">Your message</label>
-              <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 " placeholder="Leave a comment..."></textarea>
+              <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary focus:border-primary " placeholder="Leave a comment..."></textarea>
           </div>
-          <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 ">Send message</button>
+          <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary sm:w-fit hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-primary/30 ">Send message</button>
       </form>
   </div>
-</section>
+</div>
 
 <!-- End Contact -->
 

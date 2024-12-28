@@ -1,10 +1,9 @@
-<!--
-  Heads up! 👋
+---
+const date = new Date()
+console.log("date => ", date.getFullYear())
+---
 
-  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
--->
-
-<footer class="bg-white">
+<footer class="bg-gray-50">
   <div class="mx-auto max-w-[85rem] px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
     <div class="flex flex-col sm:flex-row sm:justify-between">
       <div>
@@ -68,7 +67,7 @@
                   />
                 </svg>
 
-                <span class="flex-1 text-gray-700">john@doe.com</span>
+                <span class="flex-1 text-gray-700">deren@thetaxshop.co.za</span>
               </a>
             </li>
 
@@ -92,7 +91,7 @@
                   />
                 </svg>
 
-                <span class="flex-1 text-gray-700">0123456789</span>
+                <span class="flex-1 text-gray-700">084 383 2906</span>
               </a>
             </li>
 
@@ -128,29 +127,23 @@
       </div>
     </div>
 
-    <div class="mt-12 border-t border-gray-100 pt-6">
+    <div class="mt-12 border-t border-gray-200 pt-6">
       <div class="text-center sm:flex sm:justify-between sm:text-left">
         <p class="text-sm text-gray-500">
-          <span class="block sm:inline">All rights reserved.</span>
+          <span class="block sm:inline">Developed & Maintained by</span>
 
           <a
-            class="inline-block text-orange-600 underline transition hover:text-orange-600/75"
-            href="#"
+            class="inline-block text-orange-600 underline transition hover:text-primary"
+            target="_blank"
+            href="https://petemugasa.xyz"
           >
-            Terms & Conditions
+            Pete
           </a>
 
-          <span>&middot;</span>
-
-          <a
-            class="inline-block text-orange-600 underline transition hover:text-orange-600/75"
-            href="#"
-          >
-            Privacy Policy
-          </a>
+         
         </p>
 
-        <p class="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">&copy; 2022 Company Name Designed and Developed by Pete</p>
+        <p class="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">&copy; {date.getFullYear()} The Taxshop Accountants</p>
       </div>
     </div>
   </div>
